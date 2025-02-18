@@ -27,7 +27,7 @@ public class ClientController implements CRUDController<Client, Long> {
     public ResponseEntity<Client> getOne(@PathVariable Long id) {
         Client model = service.find(id);
         return model != null ? ResponseEntity.ok(model)
-                            : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class ClientController implements CRUDController<Client, Long> {
     public ResponseEntity<Client> update(@PathVariable Long id, @RequestBody Client model) {
         Client updated = service.update(id, model);
         return updated != null ? ResponseEntity.ok(updated)
-                                   : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override

@@ -1,7 +1,9 @@
 package com.gamesUP.gamesUP.controller;
 
 import org.springframework.http.ResponseEntity;
+
 import java.util.List;
+
 public interface CRUDController<T, ID> {
 
     // Récupérer tous les éléments

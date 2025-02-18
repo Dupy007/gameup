@@ -27,7 +27,7 @@ public class PurchaseController implements CRUDController<Purchase, Long> {
     public ResponseEntity<Purchase> getOne(@PathVariable Long id) {
         Purchase model = service.find(id);
         return model != null ? ResponseEntity.ok(model)
-                            : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class PurchaseController implements CRUDController<Purchase, Long> {
     public ResponseEntity<Purchase> update(@PathVariable Long id, @RequestBody Purchase model) {
         Purchase updated = service.update(id, model);
         return updated != null ? ResponseEntity.ok(updated)
-                                   : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override

@@ -5,7 +5,6 @@ import com.gamesUP.gamesUP.model.Author;
 import com.gamesUP.gamesUP.utils.Functions;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,14 +15,16 @@ import java.util.Optional;
 public class AuthorService {
     private AuthorRepository repository;
 
-    public Author find(Long id){
-        return  repository.findById( id).orElse(null);
+    public Author find(Long id) {
+        return repository.findById(id).orElse(null);
     }
-     public Optional<Author> findAuthorByEmail(String email) {
+
+    public Optional<Author> findAuthorByEmail(String email) {
         return repository.findByEmail(email);
     }
-    public Author save(Author model){
-        return  repository.saveAndFlush(model);
+
+    public Author save(Author model) {
+        return repository.saveAndFlush(model);
     }
 
     public List<Author> findAll() {

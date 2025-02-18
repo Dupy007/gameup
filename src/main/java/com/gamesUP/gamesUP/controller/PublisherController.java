@@ -27,7 +27,7 @@ public class PublisherController implements CRUDController<Publisher, Long> {
     public ResponseEntity<Publisher> getOne(@PathVariable Long id) {
         Publisher model = service.find(id);
         return model != null ? ResponseEntity.ok(model)
-                            : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class PublisherController implements CRUDController<Publisher, Long> {
     public ResponseEntity<Publisher> update(@PathVariable Long id, @RequestBody Publisher model) {
         Publisher updated = service.update(id, model);
         return updated != null ? ResponseEntity.ok(updated)
-                                   : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override

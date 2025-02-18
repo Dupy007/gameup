@@ -14,11 +14,13 @@ import java.util.Optional;
 public class PublisherService {
     @Autowired
     PublisherRepository repository;
-    public Publisher find(Long id){
-        return  repository.findById( id).orElse(null);
+
+    public Publisher find(Long id) {
+        return repository.findById(id).orElse(null);
     }
-    public Publisher save(Publisher model){
-        return  repository.saveAndFlush(model);
+
+    public Publisher save(Publisher model) {
+        return repository.saveAndFlush(model);
     }
 
     public List<Publisher> findAll() {

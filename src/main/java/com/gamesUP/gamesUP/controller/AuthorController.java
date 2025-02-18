@@ -27,7 +27,7 @@ public class AuthorController implements CRUDController<Author, Long> {
     public ResponseEntity<Author> getOne(@PathVariable Long id) {
         Author model = service.find(id);
         return model != null ? ResponseEntity.ok(model)
-                            : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class AuthorController implements CRUDController<Author, Long> {
     public ResponseEntity<Author> update(@PathVariable Long id, @RequestBody Author model) {
         Author updated = service.update(id, model);
         return updated != null ? ResponseEntity.ok(updated)
-                                   : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override

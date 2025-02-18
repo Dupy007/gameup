@@ -21,11 +21,9 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(GameController.class)
 @Import(JwtUtil.class)
@@ -68,7 +66,7 @@ class GameControllerTest {
         Mockito.when(service.findAll()).thenReturn(games);
 
         mockMvc.perform(get("/games")
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(game1.getId()))
                 .andExpect(jsonPath("$[0].nom").value(game1.getNom()))
@@ -86,7 +84,7 @@ class GameControllerTest {
         Mockito.when(service.find(1L)).thenReturn(game);
 
         mockMvc.perform(get("/games/{id}", 1L)
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(game.getId()))
                 .andExpect(jsonPath("$.nom").value(game.getNom()));
@@ -98,7 +96,7 @@ class GameControllerTest {
         Mockito.when(service.find(1L)).thenReturn(null);
 
         mockMvc.perform(get("/games/{id}", 1L)
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isNotFound());
     }
 
@@ -116,9 +114,9 @@ class GameControllerTest {
         Mockito.when(service.save(any(Game.class))).thenReturn(savedGame);
 
         mockMvc.perform(post("/games")
-                .header("Authorization", "Bearer " + token)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(newGame)))
+                        .header("Authorization", "Bearer " + token)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(newGame)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(savedGame.getId()))
                 .andExpect(jsonPath("$.nom").value(savedGame.getNom()));
@@ -138,9 +136,9 @@ class GameControllerTest {
         Mockito.when(service.update(eq(1L), any(Game.class))).thenReturn(updatedGame);
 
         mockMvc.perform(put("/games/{id}", 1L)
-                .header("Authorization", "Bearer " + token)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(updateData)))
+                        .header("Authorization", "Bearer " + token)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(updateData)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(updatedGame.getId()))
                 .andExpect(jsonPath("$.nom").value(updatedGame.getNom()));
@@ -152,7 +150,7 @@ class GameControllerTest {
         Mockito.doNothing().when(service).delete(1L);
 
         mockMvc.perform(delete("/games/{id}", 1L)
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isNoContent());
     }
 }

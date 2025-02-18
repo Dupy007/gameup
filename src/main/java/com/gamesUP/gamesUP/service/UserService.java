@@ -14,14 +14,17 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository repository;
-    public User find(Long id){
-        return  repository.findById( id).orElse(null);
+
+    public User find(Long id) {
+        return repository.findById(id).orElse(null);
     }
-     public Optional<User> findUserByEmail(String email) {
+
+    public Optional<User> findUserByEmail(String email) {
         return repository.findByEmail(email);
     }
-    public User save(User model){
-        return  repository.saveAndFlush(model);
+
+    public User save(User model) {
+        return repository.saveAndFlush(model);
     }
 
     public List<User> findAll() {

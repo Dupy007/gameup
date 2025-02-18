@@ -14,9 +14,8 @@ public class Game {
     public String nom;
     public String genre;
     public int numEdition;
-    private double prix;
     @ManyToOne
-    @JoinColumn(name = "author_id" )
+    @JoinColumn(name = "author_id")
     public Author author;
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -26,4 +25,5 @@ public class Game {
     public Publisher publisher;
     @OneToMany(mappedBy = "game")
     public List<Avis> avis;
+    private double prix;
 }

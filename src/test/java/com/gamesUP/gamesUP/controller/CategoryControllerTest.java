@@ -21,11 +21,9 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(CategoryController.class)
 @Import(JwtUtil.class)
@@ -67,7 +65,7 @@ class CategoryControllerTest {
         Mockito.when(service.findAll()).thenReturn(categories);
 
         mockMvc.perform(get("/category")
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(cat1.getId()))
                 .andExpect(jsonPath("$[0].type").value(cat1.getType()))
@@ -85,7 +83,7 @@ class CategoryControllerTest {
         Mockito.when(service.find(1L)).thenReturn(category);
 
         mockMvc.perform(get("/category/{id}", 1L)
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(category.getId()))
                 .andExpect(jsonPath("$.type").value(category.getType()));
@@ -97,7 +95,7 @@ class CategoryControllerTest {
         Mockito.when(service.find(1L)).thenReturn(null);
 
         mockMvc.perform(get("/category/{id}", 1L)
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isNotFound());
     }
 
@@ -114,9 +112,9 @@ class CategoryControllerTest {
         Mockito.when(service.save(any(Category.class))).thenReturn(savedCategory);
 
         mockMvc.perform(post("/category")
-                .header("Authorization", "Bearer " + token)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(newCategory)))
+                        .header("Authorization", "Bearer " + token)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(newCategory)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(savedCategory.getId()))
                 .andExpect(jsonPath("$.type").value(savedCategory.getType()));
@@ -135,9 +133,9 @@ class CategoryControllerTest {
         Mockito.when(service.update(eq(1L), any(Category.class))).thenReturn(updatedCategory);
 
         mockMvc.perform(put("/category/{id}", 1L)
-                .header("Authorization", "Bearer " + token)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(updatedData)))
+                        .header("Authorization", "Bearer " + token)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(updatedData)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(updatedCategory.getId()))
                 .andExpect(jsonPath("$.type").value(updatedCategory.getType()));
@@ -149,7 +147,7 @@ class CategoryControllerTest {
         Mockito.doNothing().when(service).delete(1L);
 
         mockMvc.perform(delete("/category/{id}", 1L)
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isNoContent());
     }
 }

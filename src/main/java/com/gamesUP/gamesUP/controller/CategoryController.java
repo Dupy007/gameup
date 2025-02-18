@@ -27,7 +27,7 @@ public class CategoryController implements CRUDController<Category, Long> {
     public ResponseEntity<Category> getOne(@PathVariable Long id) {
         Category model = service.find(id);
         return model != null ? ResponseEntity.ok(model)
-                            : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class CategoryController implements CRUDController<Category, Long> {
     public ResponseEntity<Category> update(@PathVariable Long id, @RequestBody Category model) {
         Category updated = service.update(id, model);
         return updated != null ? ResponseEntity.ok(updated)
-                                   : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override

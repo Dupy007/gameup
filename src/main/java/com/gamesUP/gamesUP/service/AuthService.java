@@ -6,7 +6,6 @@ import com.gamesUP.gamesUP.model.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +32,7 @@ public class AuthService {
 
 
     public User login(Login login, HttpServletRequest request, HttpServletResponse response) {
-        Optional<User> optionalUser = repository.findByEmail(login.getEmail());
+        Optional<User> optionalUser = repository.findByUsername(login.getUsername());
         if (optionalUser.isPresent()) {
             boolean isValid = passwordEncoder.matches(login.getMotdepasse(), optionalUser.get().getMotdepasse());
             if (isValid) {

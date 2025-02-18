@@ -14,11 +14,13 @@ import java.util.Optional;
 public class CategoryService {
     @Autowired
     private CategoryRepository repository;
-    public Category find(Long id){
-        return  repository.findById( id).orElse(null);
+
+    public Category find(Long id) {
+        return repository.findById(id).orElse(null);
     }
-    public Category save(Category model){
-        return  repository.saveAndFlush(model);
+
+    public Category save(Category model) {
+        return repository.saveAndFlush(model);
     }
 
     public List<Category> findAll() {

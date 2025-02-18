@@ -14,11 +14,13 @@ import java.util.Optional;
 public class PurchaseService {
     @Autowired
     private PurchaseRepository repository;
-    public Purchase find(Long id){
-        return  repository.findById( id).orElse(null);
+
+    public Purchase find(Long id) {
+        return repository.findById(id).orElse(null);
     }
-    public Purchase save(Purchase model){
-        return  repository.saveAndFlush(model);
+
+    public Purchase save(Purchase model) {
+        return repository.saveAndFlush(model);
     }
 
     public List<Purchase> findAll() {

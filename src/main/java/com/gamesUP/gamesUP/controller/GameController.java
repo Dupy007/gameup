@@ -1,17 +1,18 @@
 package com.gamesUP.gamesUP.controller;
 
-import java.util.List;
-
+import com.gamesUP.gamesUP.model.Game;
 import com.gamesUP.gamesUP.service.GameService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.gamesUP.gamesUP.model.Game;
+import java.util.List;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/games")
 @AllArgsConstructor
-public class GameController implements CRUDController<Game, Long>  {
+public class GameController implements CRUDController<Game, Long> {
 
 
     private GameService service;
@@ -28,7 +29,7 @@ public class GameController implements CRUDController<Game, Long>  {
     public ResponseEntity<Game> getOne(@PathVariable Long id) {
         Game model = service.find(id);
         return model != null ? ResponseEntity.ok(model)
-                            : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -43,7 +44,7 @@ public class GameController implements CRUDController<Game, Long>  {
     public ResponseEntity<Game> update(@PathVariable Long id, @RequestBody Game model) {
         Game updated = service.update(id, model);
         return updated != null ? ResponseEntity.ok(updated)
-                                   : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -52,4 +53,16 @@ public class GameController implements CRUDController<Game, Long>  {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    // 🔍 Recherche avancée
+    @PostMapping("/search")
+    public ResponseEntity<List<Game>> searchGames(@RequestBody Map<String, String> searchParams) {
+        String gameName = searchParams.get("game_name");
+        String authorName = searchParams.get("author_name");
+        String publisherName = searchParams.get("publisher_name");
+
+        List<Game> results = service.searchGames(gameName, authorName, publisherName);
+        return ResponseEntity.ok(results);
+    }
+
 }

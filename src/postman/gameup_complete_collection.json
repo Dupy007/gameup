@@ -17,9 +17,14 @@
             "url": {
               "raw": "http://localhost:8080/wishlist/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["wishlist", "1"]
+              "path": [
+                "wishlist",
+                "1"
+              ]
             }
           },
           "event": [
@@ -41,7 +46,10 @@
           "request": {
             "method": "PUT",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -50,9 +58,14 @@
             "url": {
               "raw": "http://localhost:8080/wishlist/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["wishlist", "1"]
+              "path": [
+                "wishlist",
+                "1"
+              ]
             }
           },
           "event": [
@@ -77,9 +90,14 @@
             "url": {
               "raw": "http://localhost:8080/wishlist/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["wishlist", "1"]
+              "path": [
+                "wishlist",
+                "1"
+              ]
             }
           },
           "event": [
@@ -104,9 +122,13 @@
             "url": {
               "raw": "http://localhost:8080/wishlist",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["wishlist"]
+              "path": [
+                "wishlist"
+              ]
             }
           },
           "event": [
@@ -128,7 +150,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -137,9 +162,13 @@
             "url": {
               "raw": "http://localhost:8080/wishlist",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["wishlist"]
+              "path": [
+                "wishlist"
+              ]
             }
           },
           "event": [
@@ -166,7 +195,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -175,9 +207,13 @@
             "url": {
               "raw": "http://localhost:8080/users",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["users"]
+              "path": [
+                "users"
+              ]
             }
           },
           "event": [
@@ -202,9 +238,14 @@
             "url": {
               "raw": "http://localhost:8080/users/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["users", "1"]
+              "path": [
+                "users",
+                "1"
+              ]
             }
           },
           "event": [
@@ -226,7 +267,10 @@
           "request": {
             "method": "PUT",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -235,9 +279,14 @@
             "url": {
               "raw": "http://localhost:8080/users/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["users", "1"]
+              "path": [
+                "users",
+                "1"
+              ]
             }
           },
           "event": [
@@ -262,9 +311,14 @@
             "url": {
               "raw": "http://localhost:8080/users/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["users", "1"]
+              "path": [
+                "users",
+                "1"
+              ]
             }
           },
           "event": [
@@ -289,9 +343,13 @@
             "url": {
               "raw": "http://localhost:8080/users",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["users"]
+              "path": [
+                "users"
+              ]
             }
           },
           "event": [
@@ -318,7 +376,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -327,9 +388,13 @@
             "url": {
               "raw": "http://localhost:8080/purchase",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["purchase"]
+              "path": [
+                "purchase"
+              ]
             }
           },
           "event": [
@@ -354,9 +419,14 @@
             "url": {
               "raw": "http://localhost:8080/purchase/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["purchase", "1"]
+              "path": [
+                "purchase",
+                "1"
+              ]
             }
           },
           "event": [
@@ -378,7 +448,10 @@
           "request": {
             "method": "PUT",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -387,9 +460,14 @@
             "url": {
               "raw": "http://localhost:8080/purchase/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["purchase", "1"]
+              "path": [
+                "purchase",
+                "1"
+              ]
             }
           },
           "event": [
@@ -414,9 +492,14 @@
             "url": {
               "raw": "http://localhost:8080/purchase/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["purchase", "1"]
+              "path": [
+                "purchase",
+                "1"
+              ]
             }
           },
           "event": [
@@ -441,9 +524,13 @@
             "url": {
               "raw": "http://localhost:8080/purchase",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["purchase"]
+              "path": [
+                "purchase"
+              ]
             }
           },
           "event": [
@@ -470,7 +557,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -479,9 +569,13 @@
             "url": {
               "raw": "http://localhost:8080/publisher",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["publisher"]
+              "path": [
+                "publisher"
+              ]
             }
           },
           "event": [
@@ -506,9 +600,14 @@
             "url": {
               "raw": "http://localhost:8080/publisher/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["publisher", "1"]
+              "path": [
+                "publisher",
+                "1"
+              ]
             }
           },
           "event": [
@@ -530,7 +629,10 @@
           "request": {
             "method": "PUT",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -539,9 +641,14 @@
             "url": {
               "raw": "http://localhost:8080/publisher/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["publisher", "1"]
+              "path": [
+                "publisher",
+                "1"
+              ]
             }
           },
           "event": [
@@ -566,9 +673,14 @@
             "url": {
               "raw": "http://localhost:8080/publisher/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["publisher", "1"]
+              "path": [
+                "publisher",
+                "1"
+              ]
             }
           },
           "event": [
@@ -593,9 +705,13 @@
             "url": {
               "raw": "http://localhost:8080/publisher",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["publisher"]
+              "path": [
+                "publisher"
+              ]
             }
           },
           "event": [
@@ -625,9 +741,14 @@
             "url": {
               "raw": "http://localhost:8080/client/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["client", "1"]
+              "path": [
+                "client",
+                "1"
+              ]
             }
           },
           "event": [
@@ -649,7 +770,10 @@
           "request": {
             "method": "PUT",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -658,9 +782,14 @@
             "url": {
               "raw": "http://localhost:8080/client/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["client", "1"]
+              "path": [
+                "client",
+                "1"
+              ]
             }
           },
           "event": [
@@ -685,9 +814,14 @@
             "url": {
               "raw": "http://localhost:8080/client/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["client", "1"]
+              "path": [
+                "client",
+                "1"
+              ]
             }
           },
           "event": [
@@ -712,9 +846,13 @@
             "url": {
               "raw": "http://localhost:8080/client",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["client"]
+              "path": [
+                "client"
+              ]
             }
           },
           "event": [
@@ -736,7 +874,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -745,9 +886,13 @@
             "url": {
               "raw": "http://localhost:8080/client",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["client"]
+              "path": [
+                "client"
+              ]
             }
           },
           "event": [
@@ -777,9 +922,14 @@
             "url": {
               "raw": "http://localhost:8080/category/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["category", "1"]
+              "path": [
+                "category",
+                "1"
+              ]
             }
           },
           "event": [
@@ -801,7 +951,10 @@
           "request": {
             "method": "PUT",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -810,9 +963,14 @@
             "url": {
               "raw": "http://localhost:8080/category/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["category", "1"]
+              "path": [
+                "category",
+                "1"
+              ]
             }
           },
           "event": [
@@ -837,9 +995,14 @@
             "url": {
               "raw": "http://localhost:8080/category/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["category", "1"]
+              "path": [
+                "category",
+                "1"
+              ]
             }
           },
           "event": [
@@ -864,9 +1027,13 @@
             "url": {
               "raw": "http://localhost:8080/category",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["category"]
+              "path": [
+                "category"
+              ]
             }
           },
           "event": [
@@ -888,7 +1055,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -897,9 +1067,13 @@
             "url": {
               "raw": "http://localhost:8080/category",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["category"]
+              "path": [
+                "category"
+              ]
             }
           },
           "event": [
@@ -929,9 +1103,14 @@
             "url": {
               "raw": "http://localhost:8080/avis/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["avis", "1"]
+              "path": [
+                "avis",
+                "1"
+              ]
             }
           },
           "event": [
@@ -953,7 +1132,10 @@
           "request": {
             "method": "PUT",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -962,9 +1144,14 @@
             "url": {
               "raw": "http://localhost:8080/avis/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["avis", "1"]
+              "path": [
+                "avis",
+                "1"
+              ]
             }
           },
           "event": [
@@ -989,9 +1176,14 @@
             "url": {
               "raw": "http://localhost:8080/avis/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["avis", "1"]
+              "path": [
+                "avis",
+                "1"
+              ]
             }
           },
           "event": [
@@ -1016,9 +1208,13 @@
             "url": {
               "raw": "http://localhost:8080/avis",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["avis"]
+              "path": [
+                "avis"
+              ]
             }
           },
           "event": [
@@ -1040,7 +1236,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -1049,9 +1248,13 @@
             "url": {
               "raw": "http://localhost:8080/avis",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["avis"]
+              "path": [
+                "avis"
+              ]
             }
           },
           "event": [
@@ -1081,9 +1284,14 @@
             "url": {
               "raw": "http://localhost:8080/author/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["author", "1"]
+              "path": [
+                "author",
+                "1"
+              ]
             }
           },
           "event": [
@@ -1105,7 +1313,10 @@
           "request": {
             "method": "PUT",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -1114,9 +1325,14 @@
             "url": {
               "raw": "http://localhost:8080/author/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["author", "1"]
+              "path": [
+                "author",
+                "1"
+              ]
             }
           },
           "event": [
@@ -1141,9 +1357,14 @@
             "url": {
               "raw": "http://localhost:8080/author/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["author", "1"]
+              "path": [
+                "author",
+                "1"
+              ]
             }
           },
           "event": [
@@ -1168,9 +1389,13 @@
             "url": {
               "raw": "http://localhost:8080/author",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["author"]
+              "path": [
+                "author"
+              ]
             }
           },
           "event": [
@@ -1192,7 +1417,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -1201,9 +1429,13 @@
             "url": {
               "raw": "http://localhost:8080/author",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["author"]
+              "path": [
+                "author"
+              ]
             }
           },
           "event": [
@@ -1230,7 +1462,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -1239,9 +1474,14 @@
             "url": {
               "raw": "http://localhost:8080/auth/register",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["auth", "register"]
+              "path": [
+                "auth",
+                "register"
+              ]
             }
           },
           "event": [
@@ -1263,7 +1503,10 @@
           "request": {
             "method": "POST",
             "header": [
-              { "key": "Content-Type", "value": "application/json" }
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
             ],
             "body": {
               "mode": "raw",
@@ -1272,9 +1515,14 @@
             "url": {
               "raw": "http://localhost:8080/auth/login",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8080",
-              "path": ["auth", "login"]
+              "path": [
+                "auth",
+                "login"
+              ]
             }
           },
           "event": [

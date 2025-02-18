@@ -34,7 +34,7 @@ public class DataGeneratorConfig {
             Faker faker = new Faker();
             Random r = new Random();
 //            User
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10; i++) {
                 User user = new User();
                 String username = "%s%d".formatted(faker.name().username(), i);
                 String email = "user%d@%s".formatted(i, faker.internet().domainName());
@@ -51,7 +51,7 @@ public class DataGeneratorConfig {
                 }
             }
 //            Client
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10; i++) {
                 Client model = new Client();
                 String username = "%s%d".formatted(faker.name().username(), i);
                 String email = "client%d@%s".formatted(i, faker.internet().domainName());
@@ -67,7 +67,7 @@ public class DataGeneratorConfig {
                 }
             }
 //            Author
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10; i++) {
                 Author model = new Author();
                 String username = "%s%d".formatted(faker.name().username(), i);
                 String email = "user%d@%s".formatted(i, faker.internet().domainName());
@@ -83,7 +83,7 @@ public class DataGeneratorConfig {
                 }
             }
 //            Category
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 Category model = new Category();
                 model.setType(faker.name().name());
                 try {
@@ -93,7 +93,7 @@ public class DataGeneratorConfig {
                 }
             }
 //            Publisher
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 Publisher model = new Publisher();
                 model.setName(faker.company().name());
                 try {
@@ -106,7 +106,7 @@ public class DataGeneratorConfig {
             List authors = authorRepository.findAll();
             List categories = categoryRepository.findAll();
             List publishers = publisherRepository.findAll();
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10; i++) {
                 Game model = new Game();
                 model.setNom(faker.name().name());
                 model.setGenre(faker.artist().name());
@@ -123,12 +123,13 @@ public class DataGeneratorConfig {
             }
 //            Purchase
             List clients = clientRepository.findAll();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 Purchase model = new Purchase();
                 model.setArchived(faker.random().nextBoolean());
                 model.setPaid(faker.random().nextBoolean());
                 model.setDelivered(faker.random().nextBoolean());
-                model.setDate(faker.date().birthday());
+                model.setDate(faker.date().birthday(0, 5));
+                faker.random().nextInt(-250000, 0);
                 model.setClient((Client) clients.get(r.nextInt(1, clients.size())));
                 try {
                     purchaseRepository.saveAndFlush(model);
@@ -139,11 +140,11 @@ public class DataGeneratorConfig {
 //            PurchaseLine
             List games = gameRepository.findAll();
             List purchases = purchaseRepository.findAll();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 PurchaseLine model = new PurchaseLine();
                 model.setPurchase((Purchase) purchases.get(r.nextInt(1, purchases.size())));
                 model.setGame((Game) games.get(r.nextInt(1, games.size())));
-                model.setQuantite(faker.random().nextInt(1, 100));
+                model.setQuantite(faker.random().nextInt(1, 10));
                 model.setPrixTT();
                 try {
                     purchaseLineRepository.saveAndFlush(model);
@@ -152,7 +153,7 @@ public class DataGeneratorConfig {
                 }
             }
 //            Wishlist
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 Wishlist model = new Wishlist();
                 model.setClient((Client) clients.get(r.nextInt(1, clients.size())));
                 try {
@@ -163,12 +164,9 @@ public class DataGeneratorConfig {
             }
 //            WishLine
             List wishlist = wishlistRepository.findAll();
-            List cloneGame = games;
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 WishLine model = new WishLine();
-                Game selected = (Game) cloneGame.get(r.nextInt(1, cloneGame.size()));
-                cloneGame.remove(selected);
-                model.setGame(selected);
+                model.setGame((Game) games.get(r.nextInt(1, games.size())));
                 model.setWishlist((Wishlist) wishlist.get(r.nextInt(1, wishlist.size())));
                 try {
                     wishlineRepository.saveAndFlush(model);
@@ -178,11 +176,11 @@ public class DataGeneratorConfig {
             }
 //            Avis
             List users = userRepository.findAll();
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10; i++) {
                 Avis model = new Avis();
                 model.setGame((Game) games.get(r.nextInt(1, games.size())));
                 model.setUser((User) users.get(r.nextInt(1, users.size())));
-                model.setNote((int) faker.random().nextLong());
+                model.setNote(faker.random().nextInt(1, 5));
                 model.setCommentaire(faker.random().toString());
                 try {
                     avisRepository.saveAndFlush(model);

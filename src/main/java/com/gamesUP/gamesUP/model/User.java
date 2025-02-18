@@ -1,13 +1,14 @@
 package com.gamesUP.gamesUP.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "role", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("ADMIN")
 @Data
 public class User {
 
@@ -20,6 +21,7 @@ public class User {
     private String username;
     @Column(unique = true)
     private String email;
+    @JsonBackReference
     private String motdepasse;
 
     @Column(name = "role", insertable = false, updatable = false)

@@ -21,11 +21,9 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(AuthorController.class)
 @Import(JwtUtil.class)
@@ -74,7 +72,7 @@ class AuthorControllerTest {
 
         // Exécuter la requête GET en ajoutant le token dans l'en-tête Authorization
         mockMvc.perform(get("/author")
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(author1.getId()))
                 .andExpect(jsonPath("$[0].prenom").value(author1.getPrenom()))
@@ -95,7 +93,7 @@ class AuthorControllerTest {
         Mockito.when(service.find(1L)).thenReturn(author);
 
         mockMvc.perform(get("/author/{id}", 1L)
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(author.getId()))
                 .andExpect(jsonPath("$.prenom").value(author.getPrenom()))
@@ -119,9 +117,9 @@ class AuthorControllerTest {
         Mockito.when(service.save(any(Author.class))).thenReturn(createdAuthor);
 
         mockMvc.perform(post("/author")
-                .header("Authorization", "Bearer " + token)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(authorToCreate)))
+                        .header("Authorization", "Bearer " + token)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(authorToCreate)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(createdAuthor.getId()))
                 .andExpect(jsonPath("$.prenom").value(createdAuthor.getPrenom()));
@@ -144,9 +142,9 @@ class AuthorControllerTest {
         Mockito.when(service.update(eq(1L), any(Author.class))).thenReturn(updatedAuthor);
 
         mockMvc.perform(put("/author/{id}", 1L)
-                .header("Authorization", "Bearer " + token)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(updatedData)))
+                        .header("Authorization", "Bearer " + token)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(updatedData)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(updatedAuthor.getId()))
                 .andExpect(jsonPath("$.prenom").value(updatedAuthor.getPrenom()))
@@ -159,7 +157,7 @@ class AuthorControllerTest {
         Mockito.doNothing().when(service).delete(1L);
 
         mockMvc.perform(delete("/author/{id}", 1L)
-                .header("Authorization", "Bearer " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isNoContent());
     }
 }

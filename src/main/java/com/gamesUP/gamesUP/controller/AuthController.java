@@ -14,7 +14,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -31,7 +34,6 @@ public class AuthController {
     public ResponseEntity Login(@Valid @RequestBody Login login, HttpServletRequest request, HttpServletResponse response) {
 
         try {
-            System.out.println(login);
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(login.getUsername(), login.getMotdepasse())
             );
@@ -44,10 +46,10 @@ public class AuthController {
             }
         } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                             .body(e.getMessage());
+                    .body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                             .body(e.getMessage());
+                    .body(e.getMessage());
         }
         return ResponseEntity.notFound().build();
     }
@@ -59,12 +61,12 @@ public class AuthController {
             if (newuser != null) {
                 String token = jwtUtil.generateToken(user.getUsername());
                 response.addHeader("Authorization", "Bearer " + token);
-                return ResponseEntity.created(new URI("users/"+user.getId())).body(user);
+                return ResponseEntity.created(new URI("users/" + user.getId())).body(user);
             }
             return ResponseEntity.notFound().build();
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
-                             .body(e.getMessage());
+                    .body(e.getMessage());
         }
     }
 }

@@ -27,7 +27,7 @@ public class AvisController implements CRUDController<Avis, Long> {
     public ResponseEntity<Avis> getOne(@PathVariable Long id) {
         Avis model = service.find(id);
         return model != null ? ResponseEntity.ok(model)
-                            : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class AvisController implements CRUDController<Avis, Long> {
     public ResponseEntity<Avis> update(@PathVariable Long id, @RequestBody Avis model) {
         Avis updated = service.update(id, model);
         return updated != null ? ResponseEntity.ok(updated)
-                                   : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override

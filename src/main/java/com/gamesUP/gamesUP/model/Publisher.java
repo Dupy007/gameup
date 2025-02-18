@@ -1,5 +1,6 @@
 package com.gamesUP.gamesUP.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -9,12 +10,13 @@ import java.util.List;
 @Data
 public class Publisher {
 
-	
+
+    String name;
+    @OneToMany(mappedBy = "publisher")
+    @JsonBackReference
+    List<Game> games;
     @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	String name;
-	@OneToMany(mappedBy = "publisher")
-	List<Game> games;
 
 }

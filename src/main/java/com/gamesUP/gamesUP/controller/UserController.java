@@ -27,7 +27,7 @@ public class UserController implements CRUDController<User, Long> {
     public ResponseEntity<User> getOne(@PathVariable Long id) {
         User model = service.find(id);
         return model != null ? ResponseEntity.ok(model)
-                            : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class UserController implements CRUDController<User, Long> {
     public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User model) {
         User updated = service.update(id, model);
         return updated != null ? ResponseEntity.ok(updated)
-                                   : ResponseEntity.notFound().build();
+                : ResponseEntity.notFound().build();
     }
 
     @Override

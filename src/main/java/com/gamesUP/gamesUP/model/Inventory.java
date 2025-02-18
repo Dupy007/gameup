@@ -4,6 +4,6 @@ import java.util.HashMap;
 
 public class Inventory {
 
-	HashMap<Game, Integer> stock;
-	
+    HashMap<Game, Integer> stock;
+
 }

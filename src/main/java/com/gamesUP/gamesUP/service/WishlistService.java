@@ -14,11 +14,13 @@ import java.util.Optional;
 public class WishlistService {
     @Autowired
     private WishlistRepository repository;
-    public Wishlist find(Long id){
-        return  repository.findById( id).orElse(null);
+
+    public Wishlist find(Long id) {
+        return repository.findById(id).orElse(null);
     }
-    public Wishlist save(Wishlist model){
-        return  repository.saveAndFlush(model);
+
+    public Wishlist save(Wishlist model) {
+        return repository.saveAndFlush(model);
     }
 
     public List<Wishlist> findAll() {

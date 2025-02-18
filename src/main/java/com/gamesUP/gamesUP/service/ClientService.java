@@ -14,14 +14,17 @@ import java.util.Optional;
 public class ClientService {
     @Autowired
     private ClientRepository repository;
-    public Client find(Long id){
-        return  repository.findById( id).orElse(null);
+
+    public Client find(Long id) {
+        return repository.findById(id).orElse(null);
     }
-     public Optional<Client> findClientByEmail(String email) {
+
+    public Optional<Client> findClientByEmail(String email) {
         return repository.findByEmail(email);
     }
-    public Client save(Client model){
-        return  repository.saveAndFlush(model);
+
+    public Client save(Client model) {
+        return repository.saveAndFlush(model);
     }
 
     public List<Client> findAll() {
