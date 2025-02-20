@@ -1,6 +1,6 @@
 package com.gamesUP.gamesUP.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,11 +16,11 @@ public class Purchase {
     boolean delivered;
     boolean archived;
     @OneToMany(mappedBy = "purchase")
-    @JsonBackReference
+    @JsonIgnore
     List<PurchaseLine> line;
     @ManyToOne
     @JoinColumn(name = "client_id")
-    @JsonBackReference
+    @JsonIgnore
     Client client;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

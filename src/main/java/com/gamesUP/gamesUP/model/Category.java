@@ -1,6 +1,6 @@
 package com.gamesUP.gamesUP.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +14,7 @@ public class Category {
 
     String type;
     @OneToMany(mappedBy = "category")
-    @JsonBackReference
+    @JsonIgnore
     List<Game> games;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

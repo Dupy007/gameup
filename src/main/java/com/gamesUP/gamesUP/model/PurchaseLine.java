@@ -1,6 +1,6 @@
 package com.gamesUP.gamesUP.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,11 +14,11 @@ public class PurchaseLine {
     private double prixTT;
     @ManyToOne
     @JoinColumn(name = "game_id")
-    @JsonBackReference
+    @JsonIgnore
     private Game game;
     @ManyToOne
     @JoinColumn(name = "purchase_id")
-    @JsonBackReference
+    @JsonIgnore
     private Purchase purchase;
 
     public void setPrixTT() {

@@ -1,6 +1,6 @@
 package com.gamesUP.gamesUP.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -12,10 +12,10 @@ public class WishLine {
     private Long id;
     @ManyToOne
     @JoinColumn(name = "game_id")
-    @JsonBackReference
+    @JsonIgnore
     private Game game;
     @ManyToOne
     @JoinColumn(name = "wishlist_id")
-    @JsonBackReference
+    @JsonIgnore
     private Wishlist wishlist;
 }

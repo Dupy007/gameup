@@ -1,6 +1,6 @@
 package com.gamesUP.gamesUP.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -16,6 +16,6 @@ import java.util.List;
 public class Author extends User {
 
     @OneToMany(mappedBy = "author")  // Assurez-vous d'avoir la bonne relation côté Game
-    @JsonBackReference
+    @JsonIgnore
     private List<Game> games;
 }

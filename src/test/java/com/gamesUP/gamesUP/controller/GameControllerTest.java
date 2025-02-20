@@ -112,7 +112,7 @@ class GameControllerTest {
         savedGame.setNom(newGame.getNom());
 
         Mockito.when(service.save(any(Game.class))).thenReturn(savedGame);
-
+        String val = objectMapper.writeValueAsString(newGame);
         mockMvc.perform(post("/games")
                         .header("Authorization", "Bearer " + token)
                         .contentType(MediaType.APPLICATION_JSON)

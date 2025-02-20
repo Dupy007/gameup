@@ -1,7 +1,7 @@
 package com.gamesUP.gamesUP.model;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,7 +21,7 @@ public class User {
     private String username;
     @Column(unique = true)
     private String email;
-    @JsonBackReference
+    @JsonIgnore
     private String motdepasse;
 
     @Column(name = "role", insertable = false, updatable = false)
